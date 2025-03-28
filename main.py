@@ -34,7 +34,7 @@ def read_student_data(file_path: str):
             status_code=500, detail=f"Error reading file: {str(e)}")
 
 
-@app.get("/")
+@app.get("/api")
 async def get_students(class_: list[str] = Query(default=None, alias="class")):
     """Fetch all students or filter by class(es)."""
     file_path = os.path.join(os.getcwd(), "uploads", "q-fastapi.csv")
